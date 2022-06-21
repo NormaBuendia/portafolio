@@ -1,17 +1,31 @@
 import { makeStyles,  Paper, Radio, TextField, Typography, Button } from '@material-ui/core'
 import { useState } from 'react';
-import React from 'react'
+import React from 'react';
+import emailjs from 'emailjs-com';
 
 
 
 const Contact = ({title, dark, id}) => {
     const classes = useStyles();
     const [value, setValue] = useState("Hola");
+   
     //funcion que admite el objeto e que se dispara al ejecutar
     // onChange, se dispara e y se captura y con setValue secambia el valor de value
     const handleChange= (e)=>{
       setValue(e.target.value)
     }
+    
+    
+    function sendEmail(e) {
+      e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
+
+
+      emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, 'user_M-IpRwo5RZ7zn2GFw').then(res=> {
+      alert("se ha enviado correctamente");
+      console.log(res, "ola")
+      })
+  }
+
     return (
       <div className= {`${classes.section} ${dark && classes.sectiondark} `}>
         <div className={classes.sectioncontent} id={id }>
@@ -38,21 +52,64 @@ const Contact = ({title, dark, id}) => {
                      />
                </div>
             </div>
-              <form className={classes.form} noValidate autoComplete="off">
-                <TextField label= "nombre"/>
-                <TextField label= "email"/>
+              <form  onSubmit={sendEmail} className={classes.form} >
+                <TextField 
+                 id="tu nombre"
+                 label= "tu nombre"
+                 name="tu nombre"
+                 required
+                 autoComplete="tu nombre"
+                />
+                <TextField
+                 id="email"
+                 label= "email"
+                 name="email"
+                 required
+                 autoComplete="email"
+
+                 />
                   {
                      value === "Escríbeme"?(
                       <>
-                      <TextField label= "tu número de contacto"/>
-                      <TextField label= "donde trabajas"/>
+                      <TextField 
+                      id="tu teléfono de contacto"
+                      label= "tu teléfono de contacto"
+                      name="tu teléfono de contacto"
+                      required
+                      autoComplete="tu teléfono de contacto"
+                      
+                      />
+                      <TextField 
+                      id="empresa donde trabajas"
+                      label= "empresa donde trabajas"
+                      name="empresa donde trabajas"
+                      required
+                      autoComplete="empresa donde trabajas"
+                      />
                       </>
 
                       ):null
               }
-                <TextField label= "Escribe un mensaje"/>
+                <TextField
+                 id = "escribe un mensaje"
+                 label= "escribe un mensaje"
+                 name="escribe un mensaje"
+                 required
+                 autoComplete="escribe un mensaje"
+                 
+                 />
+
+
               </form>
-               <Button color= "secondary" variante='contained'>Submit</Button>
+               <Button 
+               color= "secondary" 
+               variante='contained'
+               type='submit'
+               variant='contained'
+                             
+               >
+                Submit
+                </Button>
           </Paper>
         </div> 
       </div>
@@ -77,11 +134,11 @@ const useStyles = makeStyles((theme)=>({
     },
     
     root:{
-     marginTop:theme.spacing(4),
+     marginTop:theme.spacing(9),
      marginLeft:theme.spacing(4),
      color:"#fff",
      background:"tomato",
-     fontSize:"1.2rem",
+     fontSize:"3rem",
      maxWidth:"500px",
      display:"flex",
      flexDirection:"column",

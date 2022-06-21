@@ -2,7 +2,7 @@ import { AppBar, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, make
 import React from 'react'
 import logo from '../img/Mama trabajando.jpg'
 //importamos animateScroll y le ponemos un alias, lo usamos para hacer el scroll suave
-import {Link, animateScroll as scroll} from "react-scroll"
+import {Link ,animateScroll as scroll} from "react-scroll"
 import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone"
 import EmojiObjectsTwoToneIcon from "@material-ui/icons/EmojiObjectsTwoTone"
 import BuildTwoToneIcon from "@material-ui/icons/BuildTwoTone"
@@ -11,9 +11,7 @@ import CancelIcon from "@material-ui/icons/Cancel"
 //menu hamburguesa
 import MenuIcon from "@material-ui/icons/Menu"
 import { useState } from 'react'
-
-
-
+import Links from './Links'
 
 const Navbar = () => {
   const classes = useStyles();
@@ -59,23 +57,25 @@ const Navbar = () => {
                //añado el onclick con la funcion
                onClick={scrollToTop}
                />
-           
-           <List className={classes.menu}>
+           <Links className={classes.gitLinkd}/>
+            <List className={classes.menu}>
+
             {
               // iteramos dentro del array de objetos links
               // se necesita el id y el texto, a si desestructuro
               // y coloco index porque se necesita una llave
               links.map(({id,text}, index) =>(
                 // aca utilizamos el link de react-scroll
-                <Link key={index} 
+                <Link  key={index} 
                       to={id} 
                       spy ={true} 
                       activeClass="active" 
                       smooth={true} 
                       duration = {500} 
-                      offset ={-70}>
+                      offset ={-70}
+                      >
                         {text}
-                </Link>
+                </Link >
               ))
             }
            </List>
@@ -95,7 +95,7 @@ const Navbar = () => {
            {
               links.map(({id,text, icon}, index) =>(
                 // aca utilizamos el link de react-scroll
-                <Link key={index}
+                <Link  key={index}
                       className={classes.sidebar} 
                       to={id} 
                       spy ={true} 
@@ -110,7 +110,7 @@ const Navbar = () => {
                         </ListItemIcon>
                       </span> {text}
                     </ListItem>
-                </Link>
+                </Link >
               ))
             }
     </Drawer> 
@@ -123,14 +123,17 @@ const useStyles = makeStyles((theme)=>({
     root : {
       backgroundColor:"#fafafa",
       top:0,
+      
       left:0,
       right:0,
       zIndex:999,
     },
     toolbar:{
+      
       display:"flex",
-      justifyContent:"flex-start",
-      alignItems:"center"
+      justifyContent: "flex-end",
+      alignItems:"center",
+      textDecoration:"none",
     },
     
     logo: {
@@ -145,8 +148,12 @@ const useStyles = makeStyles((theme)=>({
     light:{
     color:"#ffcc00"
     },
+    gitLinkd:{
+      paddingLeft:"15px",
+    },
 
     menu:{
+      paddingLeft:"80px",
       //para hacerlo responsive
       // cuando en pantallas mas pequeñas de small (sm), la clase menu desaparece
       [theme.breakpoints.down("sm")]:{

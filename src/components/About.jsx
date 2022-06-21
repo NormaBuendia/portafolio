@@ -18,7 +18,7 @@ const About = ({title, dark, id}) => {
             <CardContent className={classes.content}>
              <TypeWriterEffect 
              //atributos
-              text=" Hola, soy Norma Buendía"
+              text=" Hola, soy Norma Buendía De Vettori"
               textStyle={{fontSize:"2rem", fontWeith:"700px", color:"tomato"}}
               startDelay = {100}
               cursorColor="black"
@@ -28,13 +28,16 @@ const About = ({title, dark, id}) => {
              //atributos
               text=" Y me convertí en Desarrolladora FrontEnd"
               textStyle={{fontSize:"1.2rem", fontWeith:"500px", color:"black"}}
-              startDelay = {3000}
+              startDelay = {4000}
               cursorColor="black"
               typeSpeed = {100}
              />
              <Typography variant="h6" color="textSecondary">
              Front-End Developer, madre, esposa y arquitecta.
-             Soy una mujer que se motiva mucho con los grandes desafíos. Asi en mi afán de seguir aprendiendo y con mi lema “Nunca es Tarde” me encontre con la programación , con la cual estoy completamente comprometida a perseverar y seguir siendo autodidacta , para poder desarrollar mi carrera dentro del mundo tecnológico.
+             Soy una mujer que se motiva mucho con los grandes desafíos. Asi en mi afán de seguir aprendiendo
+             y con mi lema “Nunca es Tarde” me encontre con la programación , con la cual estoy completamente 
+             comprometida a perseverar y seguir siendo autodidacta , para poder desarrollar mi carrera y así crear y descubrir
+             este  mundo maravilloso de la tecnología.
              </Typography>
             </CardContent>
             <CardActions>
@@ -96,8 +99,8 @@ const useStyles = makeStyles((theme)=>({
     pdfbutton:{
       position:"absolute",
       height:"1rem",
-      bottom:"4rem",
-      right:"10rem",
+      bottom:"6rem",
+      right:"12rem",
       [theme.breakpoints.down("xs")]:{
         left:"11rem",
         top:"35rem",
