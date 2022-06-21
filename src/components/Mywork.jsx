@@ -14,8 +14,8 @@ const Mywork = ({title, dark, id}) => {
                 <Grid item key={index} xs={6} s={6} md={3}>
                  <Card className={classes.cardshadow}>
                       <CardMedia  className={classes.caratula}image={image} title="caratula"/>
-                    <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p">{tech}</Typography>
+                    <CardContent className={classes.cardcontent}>
+                        <Typography className={classes.card} variant="h8" color="textSecondary" component="p">{tech}</Typography>
                       <Link href={link} color="primary" target="_blank" rel="noopener noreferrer">
                         <Typography  className={classes.card} variant ="h6">{title}</Typography>
                       </Link>
@@ -50,14 +50,25 @@ const useStyles = makeStyles((theme)=>({
     grid:{
       marginTop:theme.spacing(10)
     },
+    cardcontent:{
+    maxWidth:"40vw",
+    maxHeigth:"40vw"
+    },
     card:{
       alignItems:'center',
-      maxWidth: 450,
+      maxWidth: 300,
+      [theme.breakpoints.down("sm")]:{
+        maxHeigth:"10vw",
+        fontSize:8
       // minHeight:275,
-      margin:theme.spacing(4),
+      }
     }, 
     
     caratula:{
+      [theme.breakpoints.down("sm")]:{
+        height:20,
+        fontSize:20
+     },
       
       height:100,
       padding:"48%",//16:9
@@ -71,11 +82,16 @@ const useStyles = makeStyles((theme)=>({
     },
 
      cardshadow:{ 
-      margin:theme.spacing(4),
+      [theme.breakpoints.down("sm")]:{
+        minHeigth:100,
+        fontSize:8
+      // minHeight:275,
+      },
+      margin:theme.spacing(2),
       zIndex:999,
       maxWidth: 450,
-      minHeight:275,
-      padding: "10px 10px",
+      minHeight:200,
+      padding: "6px 6px",
       color:"#f7f8f7",
       textdecoration: "none",
       textshadow: "0px 0px 8px gray",
