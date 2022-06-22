@@ -2,6 +2,7 @@ import { makeStyles,  Paper, Radio, TextField, Typography, Button } from '@mater
 import { useState } from 'react';
 import React from 'react';
 import emailjs from 'emailjs-com';
+// import {init} from 'emailjs-com';
 
 
 
@@ -14,17 +15,30 @@ const Contact = ({title, dark, id}) => {
     const handleChange= (e)=>{
       setValue(e.target.value)
     }
-    
-    
     function sendEmail(e) {
       e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
 
-
-      emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, 'user_M-IpRwo5RZ7zn2GFw').then(res=> {
-      alert("se ha enviado correctamente");
-      console.log(res, "ola")
-      })
+      emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, "user_M-IpRwo5RZ7zn2GFw")
+      .then((res) => {
+          console.log(res, "ola")
+          window.location.reload()  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+         
+        }).catch (error =>console.log(error)) 
+          
+    
+      
   }
+  console.log(sendEmail)
+    
+  //   function sendEmail(e) {
+  //     e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
+
+  //     emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, 'user_E_uad9Q0OIaJxkRVNprQy').then(res=> {
+  //     emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, 'user_M-IpRwo5RZ7zn2GFw').then(res=> {
+  //     alert("se ha enviado correctamente");
+  //     console.log(res, "ola")
+  //     })
+  // }
 
     return (
       <div className= {`${classes.section} ${dark && classes.sectiondark} `}>

@@ -15,9 +15,9 @@ const Mywork = ({title, dark, id}) => {
                  <Card className={classes.cardshadow}>
                       <CardMedia  className={classes.caratula}image={image} title="caratula"/>
                     <CardContent className={classes.cardcontent}>
-                        <Typography className={classes.card} variant="h8" color="textSecondary" component="p">{tech}</Typography>
+                        <Typography className={classes.card}  color="textSecondary" component="p">{tech}</Typography>
                       <Link href={link} color="primary" target="_blank" rel="noopener noreferrer">
-                        <Typography  className={classes.card} variant ="h6">{title}</Typography>
+                        <Typography  className={classes.card} >{title}</Typography>
                       </Link>
                    </CardContent>
                  </Card>

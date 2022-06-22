@@ -6,7 +6,7 @@ import js from "../img/js.png"
 import react from "../img/react.jpg"
 import node from "../img/node.png"
 import {makeStyles, Paper, Typography } from '@material-ui/core'
-import StartRating from './StartRating'
+// import StartRating from './StartRating'
 
 const Technologies = () => {
 const classes =useStyles()    
@@ -63,7 +63,7 @@ const skills =[
                 <Typography variant="h6" componet="h1">
                   {title}
                 </Typography>
-                <StartRating starts={starts} />
+                {/* <StartRating starts={starts} /> */}
             </Paper>  
         </TimelineContent>
      </TimelineItem>
