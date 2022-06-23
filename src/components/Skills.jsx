@@ -26,7 +26,8 @@ const useStyles = makeStyles((theme)=>({
     },
     sectioncontent:{
       maxWidth:"80vw",
-      margin:"0 auto",
+      margin:"auto",
+      marginTop:"1rem",
     },
   }))
 

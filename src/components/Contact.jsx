@@ -2,13 +2,15 @@ import { makeStyles,  Paper, Radio, TextField, Typography, Button } from '@mater
 import { useState } from 'react';
 import React from 'react';
 import emailjs from 'emailjs-com';
-// import {init} from 'emailjs-com';
-
-
+import { Alert } from '@material-ui/lab';
+import Collapse from '@material-ui/core/Collapse';
+import CloseIcon from '@material-ui/icons/Close';
+import IconButton from '@material-ui/core/IconButton';
 
 const Contact = ({title, dark, id}) => {
     const classes = useStyles();
     const [value, setValue] = useState("Hola");
+    const [open, setOpen] = useState(false);
    
     //funcion que admite el objeto e que se dispara al ejecutar
     // onChange, se dispara e y se captura y con setValue secambia el valor de value
@@ -16,30 +18,19 @@ const Contact = ({title, dark, id}) => {
       setValue(e.target.value)
     }
     function sendEmail(e) {
-      e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
+      e.preventDefault();    
 
-      emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, "user_M-IpRwo5RZ7zn2GFw")
+      emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, "M-IpRwo5RZ7zn2GFw")
       .then((res) => {
           console.log(res, "ola")
-          window.location.reload()  //This is if you still want the page to reload (since e.preventDefault() cancelled that behavior) 
+          window.location.reload()  //Esto es para que se recargue solo 
          
         }).catch (error =>console.log(error)) 
           
     
       
   }
-  console.log(sendEmail)
-    
-  //   function sendEmail(e) {
-  //     e.preventDefault();    //This is important, i'm not sure why, but the email won't send without it
-
-  //     emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, 'user_E_uad9Q0OIaJxkRVNprQy').then(res=> {
-  //     emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, 'user_M-IpRwo5RZ7zn2GFw').then(res=> {
-  //     alert("se ha enviado correctamente");
-  //     console.log(res, "ola")
-  //     })
-  // }
-
+  
     return (
       <div className= {`${classes.section} ${dark && classes.sectiondark} `}>
         <div className={classes.sectioncontent} id={id }>
@@ -112,18 +103,38 @@ const Contact = ({title, dark, id}) => {
                  autoComplete="escribe un mensaje"
                  
                  />
-
-
-              </form>
-               <Button 
+                  <Collapse in={open}>
+                    <Alert
+                    action={
+                        <IconButton
+                        aria-label="close"
+                        color="inherit"
+                        size="small"
+                        onClick={() => {
+                            setOpen(false);
+                        }}
+                        >
+                        <CloseIcon fontSize="inherit" />
+                        </IconButton>
+                    }
+                    >
+                    Feliz de conectarme contigo!
+                    </Alert>
+                </Collapse>
+                <Button 
                color= "secondary" 
                variante='contained'
                type='submit'
                variant='contained'
-                             
+               onClick={() => {
+                setOpen(true);
+            }}             
                >
                 Submit
                 </Button>
+
+              </form>
+              
           </Paper>
         </div> 
       </div>

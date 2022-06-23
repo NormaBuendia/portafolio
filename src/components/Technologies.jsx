@@ -60,7 +60,7 @@ const skills =[
         </TimelineSeparator>
         <TimelineContent>
             <Paper elevation={3} className={classes.paper}>
-                <Typography variant="h6" componet="h1">
+                <Typography className={classes.title}  variant="h6" componet="h1">
                   {title}
                 </Typography>
                 {/* <StartRating starts={starts} /> */}
@@ -80,9 +80,21 @@ const useStyles = makeStyles ((theme)=>({
     },
     paper:{
       padding:"6px 16px",
-      maxWidth:"200px"
+      maxWidth:"200px",
+    },
 
-    }
+    title:{
+    [theme.breakpoints.down("sm")]:{
+      fontSize: ".8rem",
+    },
+    fontSize: "1.2rem",
+    // font-family: "Roboto", "Helvetica", "Arial", sans-serif,
+    fontWeight: 500,
+    lineHeight: "1.6",
+    letterSpacing: "0.0075rem",
+}
+
+
   }))
 
 
