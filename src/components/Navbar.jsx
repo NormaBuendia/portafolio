@@ -66,12 +66,16 @@ const Navbar = () => {
               // y coloco index porque se necesita una llave
               links.map(({id,text}, index) =>(
                 // aca utilizamos el link de react-scroll
-                <Link  key={index} 
+                <Link   key={index}
+                // to fija a que id va el link 
                       to={id} 
+                      // activa cual de los links esta activo
                       spy ={true} 
                       activeClass="active" 
+                      //nos da la suavidad al hacer el scroll
                       smooth={true} 
                       duration = {500} 
+                      //nos da un pixeles extra para que el titulo de la seccion no quede debajo del nav 
                       offset ={-70}
                       >
                         {text}
@@ -87,7 +91,7 @@ const Navbar = () => {
         </Toolbar>
     </AppBar>
     {/* onClose = podemos clickear en cualquier lugar para cerrar */}
-    <Drawer anchor="right" open={open} onClose ={()=>setOpen(false)}>
+    <Drawer anchor="right" open={open} onClick ={()=>setOpen(false)}>
        <IconButton  onClick ={()=>setOpen(false)} className={classes.cancelicon}>
           <CancelIcon fontSize="large"/>
        </IconButton>
@@ -153,6 +157,7 @@ const useStyles = makeStyles((theme)=>({
     },
 
     menu:{
+      
       paddingLeft:"80px",
       //para hacerlo responsive
       // cuando en pantallas mas pequeñas de small (sm), la clase menu desaparece
@@ -191,6 +196,7 @@ const useStyles = makeStyles((theme)=>({
     },
 
     sidebar:{
+      
       width:"40vh",
       [theme.breakpoints.down("sm")]:{
        width:"45vh"

@@ -159,11 +159,11 @@ const useStyles = makeStyles((theme)=>({
     },
     
     root:{
-     marginTop:theme.spacing(9),
-     marginLeft:theme.spacing(4),
+     marginTop:theme.spacing(5),
+     marginLeft:theme.spacing(2),
      color:"#fff",
      background:"tomato",
-     fontSize:"3rem",
+     fontSize:"1rem",
      maxWidth:"500px",
      display:"flex",
      flexDirection:"column",
