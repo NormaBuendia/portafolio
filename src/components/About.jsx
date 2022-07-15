@@ -2,7 +2,7 @@ import React from 'react'
 import foto from '../img/Fotoanime.png'
 import { Card, CardActions, CardContent, CardMedia, makeStyles, Typography, Button} from '@material-ui/core'
 import TypeWriterEffect from "react-typewriter-effect"
-import cv from "../img/cv.pdf"
+import cv from "../img/cv_portafolio.jpg"
 
 //aceptamos todos los atributos como props
 const About = ({title, dark, id}) => {
