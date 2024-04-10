@@ -20,7 +20,7 @@ const Contact = ({title, dark, id}) => {
     function sendEmail(e) {
       e.preventDefault();    
 
-      emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, "M-IpRwo5RZ7zn2GFw")
+      emailjs.sendForm('service_z4sougi', 'template_salxj1j', e.target, "0gqfCCqY_-Azjmv7E")
       .then((res) => {
           console.log(res, "ola")
           window.location.reload()  //Esto es para que se recargue solo 

@@ -2,7 +2,7 @@ import React from 'react'
 import foto from '../img/Fotoanime.png'
 import { Card, CardActions, CardContent, CardMedia, makeStyles, Typography, Button} from '@material-ui/core'
 import TypeWriterEffect from "react-typewriter-effect"
-import cv from "../img/cv_portafolio.jpg"
+import cv1 from "../img/cv_portafolio.jpg"
 
 //aceptamos todos los atributos como props
 const About = ({title, dark, id}) => {
@@ -42,7 +42,7 @@ const About = ({title, dark, id}) => {
             </CardContent>
             <CardActions>
               <Button className={classes.pdfbutton} variant="contained">
-                <a href={cv} download>
+                <a href={cv1} download>
                 Descarga CV
                 </a>
               </Button>
