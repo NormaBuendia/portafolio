@@ -2,6 +2,8 @@ import React from 'react'
 import {Timeline, TimelineConnector, TimelineContent, TimelineItem, TimelineOppositeContent, TimelineSeparator} from "@mui/lab"
 import html from "../img/html.png"
 import css from "../img/css.png"
+import angular from "../img/angular.png"
+import typescript from "../img/typescript.png"
 import js from "../img/js.png"
 import react from "../img/react.jpg"
 import node from "../img/node.png"
@@ -11,6 +13,18 @@ import {makeStyles, Paper, Typography } from '@material-ui/core'
 const Technologies = () => {
 const classes =useStyles()    
 const skills =[
+    {
+      year:"2023",
+      src:angular,
+      title:"Angular",
+      starts:4,
+  },
+  {
+      year:"2023",
+      src:typescript,
+      title:"TypeScript",
+      starts:4,
+  },
     {
         year:"2022",
         src:html,
