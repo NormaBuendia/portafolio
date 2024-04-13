@@ -3,6 +3,7 @@ import {Timeline, TimelineConnector, TimelineContent, TimelineItem, TimelineOppo
 import html from "../img/html.png"
 import css from "../img/css.png"
 import angular from "../img/angular.png"
+import ionic from "../img/ionic.png"
 import typescript from "../img/typescript.png"
 import js from "../img/js.png"
 import react from "../img/react.jpg"
@@ -14,11 +15,17 @@ const Technologies = () => {
 const classes =useStyles()    
 const skills =[
     {
-      year:"2023",
-      src:angular,
-      title:"Angular",
+      year:"2024",
+      src:ionic,
+      title:"Ionic",
       starts:4,
   },
+  {
+    year:"2023",
+    src:angular,
+    title:"Angular",
+    starts:4,
+},
   {
       year:"2023",
       src:typescript,
