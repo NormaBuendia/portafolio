@@ -8,6 +8,7 @@ import typescript from "../img/typescript.png"
 import js from "../img/js.png"
 import react from "../img/react.jpg"
 import node from "../img/node.png"
+import devops from "../img/devops.png"
 import {makeStyles, Paper, Typography } from '@material-ui/core'
 // import StartRating from './StartRating'
 
@@ -16,10 +17,16 @@ const classes =useStyles()
 const skills =[
     {
       year:"2024",
-      src:ionic,
-      title:"Ionic",
+      src:devops,
+      title:"Devops",
       starts:4,
   },
+  {
+    year:"2024",
+    src:ionic,
+    title:"Ionic",
+    starts:4,
+},
   {
     year:"2023",
     src:angular,

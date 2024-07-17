@@ -26,18 +26,20 @@ const About = ({title, dark, id}) => {
              />
              <TypeWriterEffect 
              //atributos
-              text=" Y me convertí en Desarrolladora FrontEnd"
+              text=" Y me convertí en Desarrolladora FrontEnd, Devops  y continua la vida........"
               textStyle={{fontSize:"1.2rem", fontWeith:"500px", color:"black"}}
               startDelay = {4000}
               cursorColor="black"
               typeSpeed = {100}
              />
              <Typography variant="h6" color="textSecondary">
-             Front-End Developer, madre, esposa y arquitecta.
+             Devops, Front-End Developer, madre, esposa y arquitecta.
              Soy una mujer que se motiva mucho con los grandes desafíos. Asi en mi afán de seguir aprendiendo
-             y con mi lema “Nunca es Tarde” me encontre con la programación , con la cual estoy completamente 
-             comprometida a perseverar y seguir siendo autodidacta , para poder desarrollar mi carrera y así crear y descubrir
-             este  mundo maravilloso de la tecnología.
+             y con mi lema “Nunca es Tarde” me encontre con la programación. De ser arquitecta hace varios años 
+             ,pasar a ser madre a tiempo completo, decidí estudiar programación. Así conocí este maravilloso mundo
+             de la tecnología. Ví pasar el tren de la oportunidad y me subí. Continuó estudiando y no me dejó de 
+             sorprender por esta transformación en mi carrera profesional. Agradecida de la vida y de tener una gran
+             familia
              </Typography>
             </CardContent>
             <CardActions>
